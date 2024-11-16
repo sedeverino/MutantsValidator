@@ -1,16 +1,16 @@
 package com.utn.MutantChecker.services;
 
 import com.utn.MutantChecker.entities.Dna;
-import com.utn.MutantChecker.repositories.IDnaRepository;
+import com.utn.MutantChecker.repositories.DnaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 
-public class MutantServicesImpl {
+public class MutantServices {
     @Autowired
-    private final IDnaRepository dnaRepo;
+    private final DnaRepository dnaRepo;
     private static final int sequenceLength = 4;
 
-    public MutantServicesImpl(IDnaRepository dnaRepo) {
+    public MutantServices(DnaRepository dnaRepo) {
         this.dnaRepo = dnaRepo;
     }
 
@@ -75,7 +75,7 @@ public class MutantServicesImpl {
         String dnaSequence = String.join(",",dna);
 
         //Verificamos si el adn ya existe en la base de datos
-        Optional<Dna> existingDna = dnaRepo.findBySequence(dnaSequence);
+         Optional<Dna> existingDna = dnaRepo.findBySequence(dnaSequence);
         if (existingDna.isPresent()){
             return existingDna.get().isIsmutant();
         }
