@@ -3,8 +3,11 @@ package com.utn.MutantChecker.services;
 import com.utn.MutantChecker.entities.Dna;
 import com.utn.MutantChecker.repositories.DnaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.Optional;
 
+@Service
 public class MutantServices {
     @Autowired
     private final DnaRepository dnaRepo;
@@ -13,8 +16,6 @@ public class MutantServices {
     public MutantServices(DnaRepository dnaRepo) {
         this.dnaRepo = dnaRepo;
     }
-
-
 
     public boolean isMutant(String[] dna) {
         int sequenceCount = 0;
