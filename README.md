@@ -24,6 +24,7 @@ The project has been deployed on Render and it can be access by following the li
 
 # Endpoints
 - POST /mutant : Recives a JSON with a string sequence containing the ADN to analyze
+´´´json
 {
     "dna": [
         "ATGCGA",
