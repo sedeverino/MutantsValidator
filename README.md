@@ -11,5 +11,59 @@ This method will receive an array of Strings as a parameter, each representing a
 The characters in the Strings can only be: (A, T, C, G), which represent each nitrogenous base in DNA.
 We will know a human is mutant, if we found out a secuence of 4 equal letters (horizontally, vertically or diagonally) more than once."
 
+#Sequence Diagram
+Click the link below to see the sequence diagram for a POST /mutant request
+[Diagrama de secuencia - Mutantes.pdf](https://github.com/user-attachments/files/17953391/Diagrama.de.secuencia.-.Mutantes.pdf)
+
+# Execution of the Project
+The project has been deployed on Render and it can be access by following the links below
+
+- GET  https://mutantes-magento-w21.onrender.com/mutant/get     : To get all the registers
+- GET  https://mutantes-magento-w21.onrender.com/mutant/stats   : To get all the stats from people who has been scanned
+- POST https://mutantes-magento-w21.onrender.com/mutant/mutant  : Using POSTMAN and sending a JSON with all the features required
+
+# Endpoints
+- POST /mutant : Recives a JSON with a string sequence containing the ADN to analyze
+{
+    "dna": [
+        "ATGCGA",
+        "CAGTGC",
+        "TTATGT",
+        "AGAAGG",
+        "CCCCTA",
+        "TCACTG"
+    ]
+}
+- GET /stats : Returns a JSON with the following information
+{
+    "count_mutant_dna": 40,
+    "count_human_dna": 100,
+    "ratio": 0.4
+}
+
+# ADN Examples
+- MUTANT Matrix
+{
+    "dna": [
+      "ATGCGA",
+      "CAGTGC",
+      "TTATGT",
+      "AGAAAG",
+      "CCCCTA",
+      "TCACTG"
+    ]
+}
+- NO MUTANT Matrix
+{
+    "dna": [
+      "ATGGTG",
+      "GTCTTA",
+      "AATTGG",
+      "ACTAGT",
+      "GGATTC", 
+      "AGGCAA"
+    ]
+}
+
 
 
