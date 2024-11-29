@@ -24,7 +24,7 @@ The project has been deployed on Render and it can be access by following the li
 
 # Endpoints
 - POST /mutant : Recives a JSON with a string sequence containing the ADN to analyze
-´´´json
+```json
 {
     "dna": [
         "ATGCGA",
@@ -35,15 +35,19 @@ The project has been deployed on Render and it can be access by following the li
         "TCACTG"
     ]
 }
+```
 - GET /stats : Returns a JSON with the following information
+```json
 {
     "count_mutant_dna": 40,
     "count_human_dna": 100,
     "ratio": 0.4
 }
+```
 
 # ADN Examples
 - MUTANT Matrix
+```json
 {
     "dna": [
       "ATGCGA",
@@ -54,7 +58,9 @@ The project has been deployed on Render and it can be access by following the li
       "TCACTG"
     ]
 }
+```
 - NO MUTANT Matrix
+```json
 {
     "dna": [
       "ATGGTG",
@@ -65,6 +71,7 @@ The project has been deployed on Render and it can be access by following the li
       "AGGCAA"
     ]
 }
+```
 
 
 
